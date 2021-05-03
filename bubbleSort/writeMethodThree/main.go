@@ -49,6 +49,7 @@ func bubbleSort(arr []int) {
 		indexOfLastUnsortedElement = swappedIndex
 	}
 }
+
 func main() {
 	arr := []int{3, 44, 38, 5, 47, 15, 36, 34}
 	bubbleSort(arr)
