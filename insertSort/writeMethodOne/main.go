@@ -30,18 +30,20 @@ func swap(arr []int, i, j int) {
 	arr[i] = arr[i] ^ arr[j]
 }
 
-//一边比较一边向后两两交换，将最大值 / 最小值冒泡到最后一位；
-func bubbleSort(arr []int) {
-	for i := 0; i < len(arr)-1; i++ {
-		for j := 0; j < len(arr)-i-1; j++ {
-			if arr[j] > arr[j+1] {
-				swap(arr, j, j+1)
-			}
+//交换法插入排序
+func insertSort(arr []int) {
+	for i := 1; i < len(arr); i++ {
+		j := i
+		for j >= 1 && arr[j-1] > arr[j] {
+			swap(arr, j-1, j)
+			j--
 		}
 	}
+
 }
+
 func main() {
-	arr := []int{3,44, 38, 5, 47, 15, 36, 34}
-	bubbleSort(arr)
+	arr := []int{3, 44, 38, 5, 47, 15, 36, 34}
+	insertSort(arr)
 	fmt.Println(arr)
 }
